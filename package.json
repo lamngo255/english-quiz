@@ -1,0 +1,11 @@
+{
+  "name": "english-quiz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mocmeo/english-quiz.git",
+  "author": "mocmeo <ngnlam96@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.17.0"
+  }
+}
