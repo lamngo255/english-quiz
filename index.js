@@ -27,14 +27,16 @@ void (async () => {
 	initResultFolder();
 
 	try {
-		// const QUESTION_SELECTOR = "a.SetPageTerm-wordText";
-		// const ANSWER_SELECTOR = "span.TermText.notranslate.lang-vi";
-		// const questions = await getDataFromUrl(siteUrl, QUESTION_SELECTOR);
-		// const answers = await getDataFromUrl(siteUrl, ANSWER_SELECTOR);
+		const QUESTION_SELECTOR = "a.SetPageTerm-wordText";
+		const ANSWER_SELECTOR = "span.TermText.notranslate.lang-vi";
+		const questions = await getDataFromUrl(siteUrl, QUESTION_SELECTOR);
+		const answers = await getDataFromUrl(siteUrl, ANSWER_SELECTOR);
 
-		// await writeToFile("questions.json", questions);
-		// await writeToFile("answers.json", answers);
-		await writeResultData();
+		await writeToFile("questions.json", questions);
+		await writeToFile("answers.json", answers);
+
+		// when the script has finished running, uncomment the next line, and comment the previous lines
+		// await writeResultData();
 	} catch (error) {
 		console.log(error);
 	}
