@@ -4,42 +4,17 @@ const {
 	getRefinedAnswer
 } = require("./utils");
 
-const processRawQuestions = questions => {
+const processRawQuestionData = data => {
 	let result = [];
-	questions.map((question, index) => {
+	data.map((item, index) => {
 		result.push({
 			id: index,
-			content: getQuestionContent(question.text),
-			answers: getAnswersContent(question.text)
+			content: getQuestionContent(item.question),
+			answers: getAnswersContent(item.question),
+			correct_answer: getRefinedAnswer(item.answer)
 		});
 	});
 	return result;
 };
 
-const processRawAnswers = answers => {
-	let result = [];
-	answers.map((answer, index) => {
-		result.push({
-			id: index,
-			correct_answer: getRefinedAnswer(answer.text)
-		});
-	});
-	return result;
-};
-
-const mergeData = (questions, answers) => {
-	let result = [];
-	questions.map((question, index) => {
-		result.push({
-			...question,
-			correct_answer: answers[index].correct_answer
-		});
-	});
-	return result;
-};
-
-module.exports = {
-	processRawQuestions,
-	processRawAnswers,
-	mergeData
-};
+module.exports = { processRawQuestionData };
