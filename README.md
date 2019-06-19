@@ -9,5 +9,5 @@ Since December 2018, Quizlet has paused issuing new API keys, so I created this 
 yarn
 
 # Run the script
-node index
+node index.js
 ```
