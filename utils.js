@@ -8,13 +8,13 @@ const getQuestionContent = text => {
 
 const getAnswersContent = text => {
 	let str = text.replace("\n", "");
-	let answerStr = str.substring(str.indexOf("(A)"), str.length - 1);
+	let answerStr = str.substring(str.indexOf("(A)"), str.length);
 	let answers = answerStr.split(/\([A-Z]\)/); // [ '', ' develops', ' developing', ' development', ' developed' ]
 
 	answers = answers.filter(answer => answer.length > 0);
 	answers = answers.map((answer, index) => ({
 		content: answer.trim(),
-		answer: String.fromCharCode(index + "A".charCodeAt(0))
+		key: String.fromCharCode(index + "A".charCodeAt(0))
 	}));
 	return answers;
 };

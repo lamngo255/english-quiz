@@ -9,7 +9,7 @@ const processRawQuestionData = data => {
 	data.map((item, index) => {
 		result.push({
 			id: index,
-			content: getQuestionContent(item.question),
+			question: getQuestionContent(item.question),
 			answers: getAnswersContent(item.question),
 			correct_answer: getRefinedAnswer(item.answer)
 		});

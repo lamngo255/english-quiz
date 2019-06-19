@@ -3,7 +3,7 @@ const { writeToFile, initResultFolder } = require("./utils");
 const { processRawQuestionData } = require("./process_data");
 
 const siteUrl =
-	"https://quizlet.com/129710150/toeic-practice-test-with-key-and-explanation-flash-cards/";
+	"https://quizlet.com/412230019/toeic-practice-test-with-key-and-explanation-flash-cards/";
 
 const writeResultData = async data => {
 	try {
